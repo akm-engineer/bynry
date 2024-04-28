@@ -15,7 +15,7 @@ const Home = () => {
       profile.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       profile.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
       profile.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      profile.interest.toLowerCase().includes(searchTerm.toLowerCase())
+      profile.interests.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
 
