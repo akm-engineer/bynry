@@ -21,7 +21,7 @@ export const UserCard = ({
   };
 
   return (
-    <div className="w-[350px] rounded-xl bg-white border border-gray-500 ">
+    <div className="w-[350px] rounded-xl bg-white border border-gray-500 font-signature">
       <div className="flex items-center justify-center gap-4 py-2">
         <img
           src={imgSrc}

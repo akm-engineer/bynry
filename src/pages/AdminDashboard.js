@@ -54,7 +54,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8">
+    <div className="container mx-auto mt-8 font-signature">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-semibold">Admin Dashboard</h1>
         <FaHome
@@ -118,7 +118,7 @@ const AdminDashboard = () => {
                       {profile.phone}
                       <br />
                       <strong className="text-blue-400">Interest:</strong>{" "}
-                      {profile.interest}
+                      {profile.interests}
                       <br />
                       <iframe
                         className="w-full h-64 mt-4"

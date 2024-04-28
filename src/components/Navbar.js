@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ onSearchChange }) => {
   return (
-    <nav className="bg-gray-800 p-4 flex flex-col md:flex-row justify-between items-center">
+    <nav className="bg-gray-800 p-4 flex flex-col md:flex-row justify-between items-center font-signature">
       <div className="mb-2 md:mb-0">
-        <h1 className="text-white text-xl font-bold">My App</h1>
+        <h1 className="text-white text-xl font-bold">Ashish </h1>
       </div>
       <div className="flex items-center">
         <input
