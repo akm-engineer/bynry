@@ -56,7 +56,7 @@ const AdminDashboard = () => {
   return (
     <div className="container mx-auto mt-8 font-signature">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-semibold">Admin Dashboard</h1>
+        <h1 className="text-2xl font-semibold mr-2">Admin Dashboard</h1>
         <FaHome
           className="text-2xl cursor-pointer text-blue-500 hover:text-blue-700"
           onClick={goToHomePage}
