@@ -25,16 +25,13 @@ const LoginForm = () => {
     const validationErrors = validateForm(formData);
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
-      // Check if entered credentials match default credentials
       if (
         formData.email === "admin@email.in" &&
         formData.password === "Arma@123"
       ) {
-        // Redirect to admin panel if credentials are correct
         navigate("/admin-panel");
         setFormSubmitted(true);
       } else {
-        // Handle invalid credentials
         setErrors({
           login: "Invalid email or password",
         });

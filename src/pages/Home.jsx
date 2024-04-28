@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProfileCard from "../components/ProfileCard";
+import { UserCard } from "../components/ProfileCard";
 import Navbar from "../components/Navbar";
 import profiles from "../utils/profilesData";
 
@@ -20,15 +20,27 @@ const Home = () => {
   });
 
   return (
-    <div className="bg-gray-800 p-4">
+    <>
+      {" "}
       <Navbar onSearchChange={handleSearchChange} />
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
-        {filteredProfiles.map((profile, index) => (
-          <ProfileCard key={index} profile={profile} />
-        ))}
+      <div className="">
+        <div className="p-6 flex gap-6 flex-wrap items-center justify-center">
+          {filteredProfiles.map((profile, index) => (
+            <UserCard
+              key={index}
+              profile={profile}
+              name={profile.name}
+              location={profile.location}
+              email={profile.email}
+              interests={profile.interests}
+              phone={profile.phone}
+              imgSrc={profile.imgSrc}
+              mapSrc={profile.mapSrc}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

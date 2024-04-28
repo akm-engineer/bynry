@@ -1,36 +1,32 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState } from "react";
 
-import ProfileDetails from "./ProfileDetails";
-
-const ProfileCard = ({ profile }) => {
+export const UserCard = ({
+  name,
+  location,
+  email,
+  interests,
+  phone,
+  imgSrc,
+  mapSrc,
+}) => {
   const [showMap, setShowMap] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
   const toggleMap = () => {
     setShowMap(!showMap);
-    setShowDetails(false); // Hide details when map is shown
   };
 
   const toggleDetails = () => {
     setShowDetails(!showDetails);
   };
 
-  const handleEmailClick = () => {
-    window.location.href = `mailto:${profile.email}`;
-  };
-
-  const handlePhoneClick = () => {
-    window.location.href = `tel:+${profile.phone}`;
-  };
-
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto m-2 bg-white border-red-500 border">
-      <div className="flex items-center justify-center py-4">
+    <div className="w-[350px] rounded-xl bg-white border border-gray-500 ">
+      <div className="flex items-center justify-center gap-4 py-2">
         <img
-          className="w-16 h-16 rounded-full mr-4"
-          src={profile.image}
-          alt="Profile"
+          src={imgSrc}
+          alt={name}
+          className="size-20 rounded-full border border-gray-400"
         />
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -42,7 +38,7 @@ const ProfileCard = ({ profile }) => {
       {showMap && (
         <div className="px-6 py-4">
           <iframe
-            src={profile.mapSrc}
+            src={mapSrc}
             width="100%"
             height="300"
             allowFullScreen=""
@@ -53,15 +49,35 @@ const ProfileCard = ({ profile }) => {
         </div>
       )}
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{profile.name}</div>
-        <p className="text-gray-700 text-base">{profile.bio}</p>
+        <div>
+          <h1 className="font-bold text-xl">{name}</h1>
+        </div>
+        <p className="text-gray-600">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non
+          quis exercitationem culpa nesciunt nihil aut nostrum explicabo
+          reprehenderit optio amet ab temporibus asperiores quasi cupiditate.
+          Voluptatum ducimus voluptates voluptas?
+        </p>
       </div>
       {showDetails && (
-        <ProfileDetails
-          details={profile}
-          onEmailClick={handleEmailClick}
-          onPhoneClick={handlePhoneClick}
-        />
+        <div className="flex flex-col px-6 justify-center py-2 ">
+          <div className="flex  gap-3 my-1 text-gray-600">
+            <strong className="text-blue-400">Location:</strong>
+            {location}
+          </div>
+          <div className="flex  gap-3 my-1 text-gray-600">
+            <strong className="text-blue-400">Email:</strong>
+            {email}
+          </div>
+          <div className="flex  gap-3 my-1 text-gray-600">
+            <strong className="text-blue-400">Interests:</strong>
+            {interests}
+          </div>
+          <div className="flex  gap-3 my-1 text-gray-600">
+            <strong className="text-blue-400">Phone:</strong>
+            {phone}
+          </div>
+        </div>
       )}
       <div className="px-6 py-4">
         <button
@@ -74,4 +90,3 @@ const ProfileCard = ({ profile }) => {
     </div>
   );
 };
-export default ProfileCard;
